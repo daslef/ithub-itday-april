@@ -1,0 +1,57 @@
+:root {
+  /* --sl-color-bg-nav: rgb(171, 0, 234); */
+  --sl-nav-height: 5rem;
+}
+
+iframe {
+  width: 100%;
+  aspect-ratio: 4/3;
+}
+
+.link-card {
+  display: block;
+  background-color: transparent;
+  border: 1px solid var(--sl-color-purple);
+}
+
+.link-card:hover {
+  background-color: var(--sl-color-purple-low);
+  transform: scale(1.005);
+  transition: all 350ms ease-in-out;
+}
+
+.link-card:nth-child(4n + 1) {
+  border-color: var(--sl-color-orange);
+}
+
+.link-card:nth-child(4n + 1):hover {
+  background-color: var(--sl-color-orange-low);
+}
+
+.link-card:nth-child(4n + 3) {
+  border-color: var(--sl-color-green);
+}
+
+.link-card:nth-child(4n + 3):hover {
+  background-color: var(--sl-color-green-low);
+}
+
+.link-card:nth-child(4n + 4) {
+  border-color: var(--sl-color-red);
+}
+
+.link-card:nth-child(4n + 4):hover {
+  background-color: var(--sl-color-red-low);
+}
+
+.link-card:nth-child(4n + 5) {
+  border-color: var(--sl-color-blue);
+}
+
+.link-card:nth-child(4n + 5):hover {
+  background-color: var(--sl-color-blue-low);
+}
+
+.link-card .card {
+  background-color: transparent !important;
+}
