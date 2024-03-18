@@ -33,8 +33,12 @@ export default defineConfig({
               link: "/guides/backend/05-api/",
             },
             {
+              label: "Тестирование API",
+              link: "/guides/backend/06-testing-api/",
+            },
+            {
               label: "Документирование API",
-              link: "/guides/backend/06-openapi/",
+              link: "/guides/backend/07-openapi/",
             },
           ],
         },
