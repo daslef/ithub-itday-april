@@ -238,7 +238,18 @@ https://screenrec.com/share/HUlTs8VRvk
 ```
 ##### Модификация сотрудников
 
+Для модификации данных в таблицах мы используем метод `PATCH` и передаем изменяемые колонки в `body` запроса. Чтобы модифицировать не все строки, необходимо задать фильтр. 
 
+Пример запроса на изменение с фильтром по `id`: `PATCH /employees?id=eq.2`
+
+Пример тела запроса:
+```json
+{
+    "first_name": "Александр"
+}
+```
+
+Видео: https://screenrec.com/share/VH9fKeqICG
 
 ### Что дальше
 
@@ -250,4 +261,4 @@ https://screenrec.com/share/HUlTs8VRvk
 ### Что еще почитать по теме
 
 - [Документация PostgREST](https://postgrest.org/en/v12/)
-- [Статья об Insomnia на Хабре](https://habr.com/ru/articles/754154/#9)
+- [Статья о Postman на Хабре](https://habr.com/ru/articles/754154/)
