@@ -10,6 +10,8 @@ export default defineConfig({
         src: "./src/assets/logoIThub.png",
         replacesTitle: true,
       },
+      tableOfContents: false,
+      pagefind: false,
       sidebar: [
         { label: "Введение", link: "/" },
         {
@@ -37,8 +39,16 @@ export default defineConfig({
               link: "/guides/backend/06-testing-api/",
             },
             {
-              label: "Документирование API",
+              label: "Документирование",
               link: "/guides/backend/07-openapi/",
+            },
+            {
+              label: "Риалтайм",
+              link: "/guides/backend/08-realtime/",
+            },
+            {
+              label: "Дальнейшие шаги",
+              link: "/guides/backend/09-keep-going/",
             },
           ],
         },

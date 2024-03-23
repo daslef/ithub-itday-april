@@ -1,6 +1,12 @@
 :root {
   /* --sl-color-bg-nav: rgb(171, 0, 234); */
   --sl-nav-height: 5rem;
+  --sl-content-width: 64rem;
+}
+
+starlight-theme-select,
+.social-icons {
+  display: none;
 }
 
 iframe {

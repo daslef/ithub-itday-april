@@ -1,9 +1,9 @@
 ---
-title: Документирование API
+title: Документирование
 description: Документирование и тестирование API через Insomnia и OpenAPI
 ---
 
-import { Aside, LinkCard, CardGrid, Card } from '@astrojs/starlight/components';
+import { Aside, LinkCard, CardGrid, Card, Steps } from '@astrojs/starlight/components';
 
 ### Цель
 
@@ -50,24 +50,49 @@ import { Aside, LinkCard, CardGrid, Card } from '@astrojs/starlight/components';
 ### Инструменты документирования
 
 Документация может быть составлена как вручную, так и автоматизированно. 
-В нашем проекте мы используем бесплатный инструмент `ReDoc`.
+Среди средств автоматизации выделим `Swagger UI`, `ReDoc`, `RapiDoc`.
 
-<LinkCard title="Пример документации HeadHunter (ReDoc)" href="https://api.hh.ru/openapi/redoc"></LinkCard>
-<LinkCard title="Пример документации Тинькофф (ReDoc)" href="https://tinkoff.github.io/api_asdk/"></LinkCard>
+<LinkCard title="API Petstore (Swagger UI)" href="https://petstore.swagger.io/"></LinkCard>
+<LinkCard title="API HeadHunter (ReDoc)" href="https://api.hh.ru/openapi/redoc"></LinkCard>
+<LinkCard title="API Тинькофф (ReDoc)" href="https://tinkoff.github.io/api_asdk/"></LinkCard>
+<LinkCard title="API Huntflow (RapiDoc)" href="https://api.huntflow.ru/v2/docs#overview"></LinkCard>
 
+В нашем проекте мы используем бесплатный инструмент [`RapiDoc`](https://rapidocweb.com/). 
+Его преимущества:
+- быстрый старт, достаточно подгрузить корректный `json` со спецификацией;
+- не требует рантайма, достаточно добавить несколько ссылок в статичный `html`;
+- широкие возможности кастомизации макета;
+- легко развернуть на хостинг, например, `Github Pages`.
 
+### Документирование в RapiDoc
 
-—--------------------------
-в раздел про риалтайм
-https://systems.education/api-realtime
+<Steps>
+1. Конвертируй коллекции `Postman` в формат `OpenAPI` 
+согласно [руководству](https://blog.postman.com/creating-an-openapi-definition-from-a-collection-with-the-postman-api/)
+2. Создай локальный файл `apidocs.html` со следующим содержимым
+    ```html
+    <!doctype html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <script 
+            type="module" 
+            src="https://unpkg.com/rapidoc/dist/rapidoc-min.js"
+        ></script>
+    </head>
+    <body>
+        <rapi-doc spec-url=""></rapi-doc>
+    </body>
+    </html>
+    ```
+3. Добавь относительный путь к файлу из шага 1 в качестве значения атрибута `spec-url` 
+4. Теперь `apidocs.html` можно открыть в браузере
+5. Если всё отображается корректно, размести документацию (`html` и `json`) на `Github Pages`
+</Steps>
 
-
-
+<Aside type="note" title="Зона роста">Если позволяет время, можно стилизовать страницу ориентируясь на примеры с официального сайта</Aside>
 
 ### Что еще почитать по теме
 
-- [Создание документации к REST API](https://www.digitalocean.com/community/tutorials/how-to-create-documentation-for-your-rest-api-with-insomnia)
-- https://appmaster.io/ru/blog/sovety-po-dokumentirovaniiu-restful-api
-- https://habr.com/ru/articles/722650/
-- https://starkovden.github.io/
-- доп почитать по теме https://habr.com/ru/articles/722650/
+- [Советы по документированию REST API](https://appmaster.io/ru/blog/sovety-po-dokumentirovaniiu-restful-api)
+- [Курс по документированию API](https://starkovden.github.io/)
