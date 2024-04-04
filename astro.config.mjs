@@ -5,7 +5,7 @@ import starlight from "@astrojs/starlight";
 export default defineConfig({
   integrations: [
     starlight({
-      title: "it-day",
+      title: "IThub Spb",
       logo: {
         src: "./src/assets/logoIThub.png",
         replacesTitle: true,
@@ -13,11 +13,17 @@ export default defineConfig({
       tableOfContents: false,
       pagefind: false,
       sidebar: [
-        { label: "Введение", link: "/" },
+        {
+          label: "Введение",
+          link: "/",
+        },
         {
           label: "Бэкенд",
           items: [
-            { label: "Знакомство", link: "/guides/backend/01-introduction/" },
+            {
+              label: "Знакомство",
+              link: "/guides/backend/01-introduction/",
+            },
             {
               label: "Технологический стэк",
               link: "/guides/backend/02-techstack/",
@@ -51,15 +57,6 @@ export default defineConfig({
               link: "/guides/backend/09-keep-going/",
             },
           ],
-        },
-
-        {
-          label: "Фронтенд",
-          items: [{ label: "Знакомство", link: "/guides/example/" }],
-        },
-        {
-          label: "Глоссарий",
-          autogenerate: { directory: "reference" },
         },
       ],
       customCss: ["./src/styles/landing.css"],
